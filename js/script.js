@@ -25,3 +25,32 @@ incr++;
 ++incr;
 decr--;
 --decr;
+
+//Функции
+let a = 4,
+    b = 4;
+function showFirstMessage(text){
+    console.log(text);
+}
+showFirstMessage("Hello world");
+
+const logger = function(){
+    console.log("Hello!");
+};
+logger();
+
+const calc = (a, b) => a + b;
+console.log(calc(a,b));
+
+//Методы и свойства строк и чисел
+const str = "test";
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+
+const fruit = "some fruit";
+console.log(fruit.indexOf("fruit"));
+const logg = "Hello world";
+console.log(logg.slice(6,10));
+console.log(logg.substr(6,5));
+const test = "12.2px";
+console.log(parseInt(test));
