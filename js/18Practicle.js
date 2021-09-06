@@ -32,7 +32,7 @@ rememberMyFilms();
 
 function detectPersonalLevel(){
     if(numberOfFilms < 10){
-        console.log("Просмотрено очень малдо фильмов");
+        console.log("Просмотрено очень мало фильмов");
      } else if (numberOfFilms >= 10 && numberOfFilms <=30) {
         console.log("Вы классический зритель"); 
      } else if(numberOfFilms > 30){ 
