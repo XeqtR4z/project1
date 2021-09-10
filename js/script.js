@@ -219,3 +219,54 @@ console.log(jonh.armor);
 jonh.SayHello();
 
 Object.setPrototypeOf(jonh,soldier);
+
+//Динамическая типизация
+console.log(typeof(String(null)));
+console.log(typeof( 5 + ''));
+const num = 5;
+console.log("https://vk.com/catalog/"+ num);
+const fontsize = 26 + 'px';
+
+console.log(typeof(Number('4')));
+console.log(typeof(+'4'));
+console.log(typeof(parseInt("15px",10)));
+
+let switcher = null;
+if(switcher){
+    console.log('Working...');
+}
+console.log(typeof(Boolean('4')));
+console.log(typeof(!!"44444"));
+
+//Задания на собеседовании
+console.log([] + false - null + true);//NaN
+ let y = 1;
+ let x = y = 2;
+ alert(x);//2
+
+ console.log([] + 1 + 2);//12
+
+ alert("1"[0]);//1
+
+console.log(2 && 1 && null && 0 && undefined);//null
+
+console.log(!!(1&&2) ===(1&&2));//false
+
+alert(null || 2 && 3 || 4);//3
+
+const a = [1,2,3],
+      b = [1,2,3];
+console.log(a == b);//false
+
+alert(+"Infinity");//Infinity
+
+console.log("Ёжик" > "яблоко");//false
+
+console.log(0 || "" || 2 || undefined || true || false);//2
+
+
+
+
+
+
+
