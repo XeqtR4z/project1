@@ -26,7 +26,7 @@ const deleteElement = (event) =>{
 // overlay.addEventListener('click',deleteElement);
 btns.forEach(btn =>{
     btn.addEventListener('click',deleteElement, {once: true});
-})
+});
 const link = document.querySelector('a');
 link.addEventListener('click', (event) => {
     event.preventDefault();//отменяет все действия, который должны были произойти по клику на объект
