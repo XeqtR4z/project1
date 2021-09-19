@@ -81,4 +81,57 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }
 
     setClock('.timer',deadline);
+
+    //Modal
+
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
+        modal = document.querySelector('.modal'),
+        modalCloseBtn = document.querySelector('[data-close]');
+
+        
+    function openModal(){
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+            // Либо вариант с toggle - но тогда назначить класс в верстке
+        //modal.classList.toggle('show');
+        document.body.style.overflow = 'hidden';
+        clearInterval(ModlTimerId);
+    }
+    
+
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', openModal);
+    });
+
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        // Либо вариант с toggle - но тогда назначить класс в верстке
+        //modal.classList.toggle('show');
+        document.body.style.overflow = '';
+    }
+ //закрываем модальное окно если кликнули вне модального окна   
+    modalCloseBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape" && modal.classList.contains('show')) { 
+            closeModal();
+        }
+    });
+    //Открытие модальнгого окна через какое то время
+    const ModlTimerId = setTimeout(openModal, 5000);
+    //Показывыаем модальное окно, когда пролистали в конец страницы
+    function showModalByScrol(){
+        if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight){
+                openModal();
+                window.removeEventListener('scroll',showModalByScrol);
+        }
+    }
+    window.addEventListener('scroll', showModalByScrol);
 });
